@@ -1,7 +1,7 @@
 
 type PredictionProps = {
-    digit: number,
-    confidence: number,
+    digit: number | null,
+    confidence: number | null,
 };
 
 function Prediction({digit, confidence}: PredictionProps) {

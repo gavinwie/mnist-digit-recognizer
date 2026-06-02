@@ -3,7 +3,7 @@ import './App.css'
 import { useState } from "react";
 
 function App() {
-  const [prediction, setPrediction] = useState(5)
+  const [prediction, setPrediction] = useState<number | null>(null)
 
 
   return (
