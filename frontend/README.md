@@ -1,0 +1,1 @@
+# A Simple Frontend for a AI Digit Recognizer trained on the MNIST Dataset
