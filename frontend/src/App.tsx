@@ -2,13 +2,13 @@ import { useRef, useState } from "react";
 
 import { preprocessCanvas } from "./services/imageProcessing";
 
-import { predictDigit } from "./services/model";
+import { predictChar } from "./services/model";
 import DrawingCanvas from "./components/DrawingCanvas";
 import "./App.css";
 import { FaGithub } from "react-icons/fa6";
 
 function App() {
-  const [prediction, setPrediction] = useState<number | null>(null);
+  const [prediction, setPrediction] = useState<string | null>(null);
 
   const [confidence, setConfidence] = useState<number | null>(null);
 
@@ -31,9 +31,9 @@ function App() {
 
       setPreview(previewUrl);
 
-      const result = await predictDigit(tensor);
+      const result = await predictChar(tensor);
 
-      setPrediction(result.digit);
+      setPrediction(result.char);
 
       setConfidence(result.confidence);
     } catch (error) {
@@ -66,10 +66,10 @@ function App() {
   return (
     <>
       <header className="hero">
-  <h1 className="app-title">Digit Recognizer</h1>
+  <h1 className="app-title">Alphanumeric Recognizer</h1>
 
   <p className="tagline">
-    Draw a digit and classify it with an ONNX neural network.
+    Draw a single alphanumeric character and classify it with an ONNX neural network.
   </p>
 
   <a
@@ -117,6 +117,7 @@ function App() {
           )}
         </div>
       </div>
+      <small>A React+TypeScript frontend for a Tensorflow model to recognize single alphanumeric characters.</small>
     </>
   );
 }

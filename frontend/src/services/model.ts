@@ -1,7 +1,9 @@
 import * as ort from "onnxruntime-web";
-import type { PredictionResult } from "../types/prediction";
+import { ascii_map, type PredictionResult } from "../types/prediction";
 
-const MODEL_PATH = `${import.meta.env.BASE_URL}model/mnist_model.onnx`;
+// const MODEL_PATH = `${import.meta.env.BASE_URL}model/mnist_model.onnx`;
+const MODEL_PATH = `${import.meta.env.BASE_URL}model/emnist_balanced_model.onnx`;
+
 
 const INPUT_NAME = "args_0:0";
 
@@ -19,7 +21,7 @@ export async function loadModel(): Promise<ort.InferenceSession> {
   return session;
 }
 
-export async function predictDigit(
+export async function predictChar(
   tensor: ort.Tensor,
 ): Promise<PredictionResult> {
   const activeSession = await loadModel();
@@ -41,7 +43,7 @@ export async function predictDigit(
   }
 
   return {
-    digit,
+    char: ascii_map[digit],
     confidence,
     probabilities,
   };
