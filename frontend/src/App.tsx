@@ -5,6 +5,7 @@ import { preprocessCanvas } from "./services/imageProcessing";
 import { predictDigit } from "./services/model";
 import DrawingCanvas from "./components/DrawingCanvas";
 import "./App.css";
+import { FaGithub } from "react-icons/fa6";
 
 function App() {
   const [prediction, setPrediction] = useState<number | null>(null);
@@ -64,7 +65,19 @@ function App() {
 
   return (
     <>
-      <h1>Digit Recognizer</h1>
+      <div className="title-row">
+        <h1>Digit Recognizer</h1>
+
+        <a
+          href="https://github.com/gavinwie/mnist-digit-recognizer"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="github-link"
+          aria-label="View source code on GitHub"
+        >
+          <FaGithub />
+        </a>
+      </div>
       <div className="app-container">
         <div className="canvas-container">
           <DrawingCanvas
