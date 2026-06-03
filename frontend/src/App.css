@@ -210,3 +210,21 @@
 .prediction-container {
   flex: 1;
 }
+.title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.github-link:hover {
+  opacity: 0.8;
+}
