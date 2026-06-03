@@ -65,19 +65,23 @@ function App() {
 
   return (
     <>
-      <div className="title-row">
-        <h1>Digit Recognizer</h1>
+      <header className="hero">
+  <h1 className="app-title">Digit Recognizer</h1>
 
-        <a
-          href="https://github.com/gavinwie/mnist-digit-recognizer"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="github-link"
-          aria-label="View source code on GitHub"
-        >
-          <FaGithub />
-        </a>
-      </div>
+  <p className="tagline">
+    Draw a digit and classify it with an ONNX neural network.
+  </p>
+
+  <a
+    href="https://github.com/gavinwie/mnist-digit-recognizer"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="github-button"
+  >
+    <FaGithub />
+    <span>View Source</span>
+  </a>
+</header>
       <div className="app-container">
         <div className="canvas-container">
           <DrawingCanvas
