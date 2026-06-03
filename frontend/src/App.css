@@ -200,3 +200,13 @@
     border-right-color: var(--border);
   }
 }
+.app-container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: flex-start;
+}
+.canvas-container,
+.prediction-container {
+  flex: 1;
+}
