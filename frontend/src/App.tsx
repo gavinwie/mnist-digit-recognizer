@@ -66,22 +66,22 @@ function App() {
   return (
     <>
       <header className="hero">
-  <h1 className="app-title">Digit Recognizer</h1>
+        <h1 className="app-title">Digit Recognizer</h1>
 
-  <p className="tagline">
-    Draw a digit and classify it with an ONNX neural network.
-  </p>
+        <p className="tagline">
+          Draw a single digit and classify it with an ONNX neural network.
+        </p>
 
-  <a
-    href="https://github.com/gavinwie/mnist-digit-recognizer"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="github-button"
-  >
-    <FaGithub />
-    <span>View Source</span>
-  </a>
-</header>
+        <a
+          href="https://github.com/gavinwie/mnist-digit-recognizer"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="github-button"
+        >
+          <FaGithub />
+          <span>View Source</span>
+        </a>
+      </header>
       <div className="app-container">
         <div className="canvas-container">
           <DrawingCanvas
@@ -117,6 +117,18 @@ function App() {
           )}
         </div>
       </div>
+      <small className="disclaimer">
+        A simple React + TypeScript frontend for a single digit recognition
+        model trained on the{" "}
+        <a
+          href="https://www.tensorflow.org/datasets/catalog/mnist"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          MNIST dataset
+        </a>
+        .
+      </small>
     </>
   );
 }
