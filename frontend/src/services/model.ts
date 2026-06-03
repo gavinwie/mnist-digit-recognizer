@@ -1,7 +1,7 @@
 import * as ort from "onnxruntime-web";
 import type { PredictionResult } from "../types/prediction";
 
-const MODEL_PATH = "/model/mnist_model.onnx";
+const MODEL_PATH = `${import.meta.env.BASE_URL}model/mnist_model.onnx`;
 
 const INPUT_NAME = "args_0:0";
 
